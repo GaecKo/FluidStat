@@ -40,20 +40,22 @@ def battery():
         hours, minutes = divmod(minutes, 60)
         return "%d:%02d:%02d" % (hours, minutes, seconds)
     while True:
-        btry = psutil.sensors_battery()
-        btry_percent = ceil(btry.percent)
-        free = 100 - btry_percent
-        plugged = btry.power_plugged
-        time_left = convertTime(btry.secsleft)
-
-        plt.cld()
-        plt.simple_stacked_bar(["Battery:"], [[btry_percent], [free]], title="Battery Percentage", labels=["available", "used"], colors=["green", "white"])
-        plt.sleep(0.01)
-        os.system('cls' if os.name == 'nt' else 'clear')
-        plt.show()
-        print(f"Battery Plugged: {plugged}")
-        print(f"Time left: {time_left if not plugged else 'N/A'}")
-        time.sleep(1)
+        try:
+            btry = psutil.sensors_battery()
+            btry_percent = ceil(btry.percent)
+            free = 100 - btry_percent
+            plugged = btry.power_plugged
+            time_left = convertTime(btry.secsleft)
+            plt.cld()
+            plt.simple_stacked_bar(["Battery:"], [[btry_percent], [free]], title="Battery Percentage", labels=["available", "used"], colors=["green", "white"])
+            plt.sleep(0.01)
+            os.system('cls' if os.name == 'nt' else 'clear')
+            plt.show()
+            print(f"Battery Plugged: {plugged}")
+            print(f"Time left: {time_left if not plugged else 'N/A'}")
+            time.sleep(1)
+        except:
+            print("We can´t access your battery sensors. Does your device have a battery?")
 
 # def help():
 #     print("List of usabla arguments:\n")
