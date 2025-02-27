@@ -9,7 +9,10 @@
 * [FluidStat as a command](#adding-fluidstat-as-a-command)
 * [Extra Notes](#extra-note)
 
-
+## Important Note
+> [!IMPORTANT] 
+> This project is WIP, the initial idea was to built a full desktop app using `fbs`, `PySide6`, ...
+> As current state can tell, this is only a funny little project on which I don't plan on working anymore. The code is therefore really simple and basic. 
 
 ****
 ## Features
@@ -67,7 +70,3 @@ If you wish to have FluidStat available as a global command in your Linux termin
     FluidStat -btry
     ```
 
-## Extra Note
-> [!IMPORTANT] 
-> This project is WIP, the initial idea was to built a full desktop app using `fbs`, `PySide6`, ...
-> As current state can tell, this is only a funny little project on which I don't plan on working anymore. The code is therefore really simple and basic. 
